@@ -16,6 +16,7 @@ namespace QuantityMeasurement
             FEET,
             INCH,
             YARD,
+            CENTIMETER,
         }
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace QuantityMeasurement
                 Unit.FEET => 1 * 12.0,
                 Unit.INCH => 1.0,
                 Unit.YARD => 1 * 36.0,
+                Unit.CENTIMETER => 1 / 2.5,
                 _ => 0.0,
             };
         }

@@ -293,5 +293,48 @@ namespace QuantityMeasurementTest
             Assert.AreEqual(valueOne, valueTwo);
         }
 
+        /// <summary>
+        /// Test method for checking equality between 0 centimeter and 0 centimeter.
+        /// </summary>
+        [Test]
+        public void GivenZeroCentimeterAndZeroCentimeter_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CENTIMETER);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CENTIMETER);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same centimeter values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameCentimeterValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.CENTIMETER);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.CENTIMETER);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different centimeter values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentCentimeterValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.CENTIMETER);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.CENTIMETER);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 inch and 0 centimeter.
+        /// </summary>
+        [Test]
+        public void GivenZeroInchAndZeroCentimeter_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CENTIMETER);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
