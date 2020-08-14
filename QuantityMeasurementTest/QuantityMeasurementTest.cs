@@ -190,5 +190,16 @@ namespace QuantityMeasurementTest
             double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
             Assert.AreEqual(12.0, valueOne);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 12 inch and 1 feet.
+        /// </summary>
+        [Test]
+        public void GivenTwelveInchAndOneFeet_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(12.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
