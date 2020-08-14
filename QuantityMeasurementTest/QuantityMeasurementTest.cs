@@ -527,5 +527,16 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.MILLILITRE);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 1 gallon and 3.78 litre.
+        /// </summary>
+        [Test]
+        public void GivenOneGallonAndThreePointSevenEightLitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(3.78, ConversionUnits.Unit.LITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
