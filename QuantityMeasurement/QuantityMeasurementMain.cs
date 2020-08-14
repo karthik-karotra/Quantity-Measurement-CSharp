@@ -20,6 +20,16 @@ namespace QuantityMeasurement
         }
 
         /// <summary>
+        /// method to get inch.
+        /// </summary>
+        /// <param name="inch">inch value to get converted.</param>
+        /// <returns>inch.</returns>
+        public double GetInch(double inch)
+        {
+            return inch;
+        }
+
+        /// <summary>
         /// Equals method.
         /// </summary>
         /// <param name="obj">Object Of Quantity Measurement Main Class.</param>

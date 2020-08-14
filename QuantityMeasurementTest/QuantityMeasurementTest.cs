@@ -24,7 +24,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test method for checking equality between o feet and o feet.
+        /// Test method for checking equality between 0 feet and 0 feet.
         /// </summary>
         [Test]
         public void GivenZeroFeetAndZeroFeet_WhenEqual_ShouldReturnTrue()
@@ -35,7 +35,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test method for checking equality between o feet and o feet.
+        /// Test method for checking null reference for feet.
         /// </summary>
         [Test]
         public void GivenNullFeetValue_ShouldReturnFalse()
@@ -44,20 +44,20 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// Test method for checking class reference.
+        /// Test method for checking class reference for feet.
         /// </summary>
         [Test]
-        public void GivenClassReference_WhenChecked_ShouldReturnTrue()
+        public void GivenClassReferenceForFeet_WhenChecked_ShouldReturnTrue()
         {
             bool result = this.quantityMeasurement.Equals(this.quantityMeasurement);
             Assert.IsTrue(result);
         }
 
         /// <summary>
-        /// Test method for checking type.
+        /// Test method for checking type for feet.
         /// </summary>
         [Test]
-        public void GivenClassReference_WhenTypeChecked_ShouldReturnTrue()
+        public void GivenClassReferenceForFeet_WhenTypeChecked_ShouldReturnTrue()
         {
             QuantityMeasurementMain quantityMeasurement1 = new QuantityMeasurementMain();
             QuantityMeasurementMain quantityMeasurement2 = new QuantityMeasurementMain();
@@ -84,6 +84,69 @@ namespace QuantityMeasurementTest
             double feet1 = this.quantityMeasurement.GetFeet(1.0);
             double feet2 = this.quantityMeasurement.GetFeet(10.0);
             Assert.AreNotEqual(feet1, feet2);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 inch and 0 inch.
+        /// </summary>
+        [Test]
+        public void GivenZeroInchAndZeroInch_WhenEqual_ShouldReturnTrue()
+        {
+            double inch1 = this.quantityMeasurement.GetInch(0.0);
+            double inch2 = this.quantityMeasurement.GetInch(0.0);
+            Assert.AreEqual(inch1, inch2);
+        }
+
+        /// <summary>
+        /// Test method for checking null reference for inch.
+        /// </summary>
+        [Test]
+        public void GivenNullInchValue_ShouldReturnFalse()
+        {
+            Assert.IsFalse(this.quantityMeasurement.Equals(null));
+        }
+
+        /// <summary>
+        /// Test method for checking class reference for inch.
+        /// </summary>
+        [Test]
+        public void GivenClassReferenceForInch_WhenChecked_ShouldReturnTrue()
+        {
+            bool result = this.quantityMeasurement.Equals(this.quantityMeasurement);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// Test method for checking type.
+        /// </summary>
+        [Test]
+        public void GivenClassReferenceForInch_WhenTypeChecked_ShouldReturnTrue()
+        {
+            QuantityMeasurementMain quantityMeasurement1 = new QuantityMeasurementMain();
+            QuantityMeasurementMain quantityMeasurement2 = new QuantityMeasurementMain();
+            Assert.AreEqual(quantityMeasurement1, quantityMeasurement2);
+        }
+
+        /// <summary>
+        /// Test method for equality check of 2 same inch values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameInchValues_WhenEqual_ShouldReturnTrue()
+        {
+            double inch1 = this.quantityMeasurement.GetInch(1.0);
+            double inch2 = this.quantityMeasurement.GetInch(1.0);
+            Assert.AreEqual(inch1, inch2);
+        }
+
+        /// <summary>
+        /// Test method for equality check of 2 different inch values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentInchValues_WhenEqual_ShouldReturnFalse()
+        {
+            double inch1 = this.quantityMeasurement.GetInch(1.0);
+            double inch2 = this.quantityMeasurement.GetInch(10.0);
+            Assert.AreNotEqual(inch1, inch2);
         }
     }
 }
