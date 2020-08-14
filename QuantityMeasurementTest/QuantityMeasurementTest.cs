@@ -148,5 +148,16 @@ namespace QuantityMeasurementTest
             double inch2 = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.INCH);
             Assert.AreNotEqual(inch1, inch2);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 0 feet and 0 inch.
+        /// </summary>
+        [Test]
+        public void GivenZeroFeetAndZeroInch_ShouldReturnTrue()
+        {
+            double feet = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.FEET);
+            double inch = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.INCH);
+            Assert.AreEqual(feet, inch);
+        }
     }
 }
