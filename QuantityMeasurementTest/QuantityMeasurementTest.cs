@@ -347,5 +347,53 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(5.0, ConversionUnits.Unit.CENTIMETER);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking addition of 2 inch and 2 inch is 4 inch.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchAndTwoInch_WhenAdded_ShouldReturnFourInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(2.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(2.0, ConversionUnits.Unit.INCH);
+            double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
+            Assert.AreEqual(4.0, total);
+        }
+
+        /// <summary>
+        /// Test method for checking addition of 1 feet and 2 inch is 14 inch.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndTwoInch_WhenAdded_ShouldReturnFourteenInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
+            double valueTwo = this.quantityMeasurement.UnitConversion(2.0, ConversionUnits.Unit.INCH);
+            double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
+            Assert.AreEqual(14.0, total);
+        }
+
+        /// <summary>
+        /// Test method for checking addition of 1 feet and 1 feet is 24 inch.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndOneFeet_WhenAdded_ShouldReturnTwentyFourInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
+            double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
+            Assert.AreEqual(24.0, total);
+        }
+
+        /// <summary>
+        /// Test method for checking addition of 2 inch and 2.5 centimeter is 3 inch.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchAndTwoAndHalfCentimeter_WhenAdded_ShouldReturnThreeInch()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(2.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(2.5, ConversionUnits.Unit.CENTIMETER);
+            double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
+            Assert.AreEqual(3.0, total);
+        }
     }
 }

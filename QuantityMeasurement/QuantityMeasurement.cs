@@ -22,6 +22,22 @@ namespace QuantityMeasurement
         }
 
         /// <summary>
+        /// Method to add values in different units.
+        /// </summary>
+        /// <param name="values">Array of values in different units.</param>
+        /// <returns>Total.</returns>
+        public double AddUnits(params double[] values)
+        {
+            double total = 0.0;
+            foreach (double value in values)
+            {
+                total += value;
+            }
+
+            return total;
+        }
+
+        /// <summary>
         /// Equals method.
         /// </summary>
         /// <param name="obj">Object Of Quantity Measurement Main Class.</param>
