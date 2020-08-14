@@ -17,6 +17,9 @@ namespace QuantityMeasurement
             INCH,
             YARD,
             CENTIMETER,
+            LITRE,
+            GALLON,
+            MILLILITRE,
         }
 
         /// <summary>
@@ -32,6 +35,9 @@ namespace QuantityMeasurement
                 Unit.INCH => 1.0,
                 Unit.YARD => 1 * 36.0,
                 Unit.CENTIMETER => 1 / 2.5,
+                Unit.LITRE => 1.0,
+                Unit.GALLON => 3.78,
+                Unit.MILLILITRE => 1.0 / 1000,
                 _ => 0.0,
             };
         }

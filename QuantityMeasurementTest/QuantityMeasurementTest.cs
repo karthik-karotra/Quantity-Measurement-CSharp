@@ -395,5 +395,137 @@ namespace QuantityMeasurementTest
             double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
             Assert.AreEqual(3.0, total);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 0 litre and 0 litre.
+        /// </summary>
+        [Test]
+        public void GivenZeroLitreAndZeroLitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.LITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.LITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same litre values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameLitreValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.LITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.LITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different litre values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentLitreValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.LITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.LITRE);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 gallon and 0 gallon.
+        /// </summary>
+        [Test]
+        public void GivenZeroGallonAndZeroGallon_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GALLON);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same gallon values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameGallonValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GALLON);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different gallon values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentGallonValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.GALLON);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 millilitre and 0 millilitre.
+        /// </summary>
+        [Test]
+        public void GivenZeroMililitreAndZeroMililitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.MILLILITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.MILLILITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same millilitre values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameMililitreValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.MILLILITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.MILLILITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different millilitre values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentMililitreValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.MILLILITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.MILLILITRE);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 gallon and 0 litre.
+        /// </summary>
+        [Test]
+        public void GivenZeroGallonAndZeroLitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.LITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 gallon and 0 millilitre.
+        /// </summary>
+        [Test]
+        public void GivenZeroGallonAndZeroMililitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.MILLILITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 litre and 0 millilitre.
+        /// </summary>
+        [Test]
+        public void GivenZeroLitreAndZeroMililitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.LITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.MILLILITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
