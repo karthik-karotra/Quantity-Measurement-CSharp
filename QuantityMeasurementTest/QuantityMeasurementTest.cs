@@ -336,5 +336,16 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CENTIMETER);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 2 inch and 5 centimeter.
+        /// </summary>
+        [Test]
+        public void GivenTwoInchAndFiveCentimeter_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(2.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(5.0, ConversionUnits.Unit.CENTIMETER);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
