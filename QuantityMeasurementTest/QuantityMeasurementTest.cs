@@ -5,6 +5,7 @@
 namespace QuantityMeasurementTest
 {
     using NUnit.Framework;
+    using QuantityMeasurement;
 
     /// <summary>
     /// Quantity Measurement Class.
@@ -25,7 +26,9 @@ namespace QuantityMeasurementTest
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            double feet1 = QuantityMeasurementMain.GetFeet(0.0);
+            double feet2 = QuantityMeasurementMain.GetFeet(0.0);
+            Assert.AreEqual(feet1, feet2);
         }
     }
 }

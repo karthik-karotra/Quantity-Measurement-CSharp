@@ -7,7 +7,16 @@ namespace QuantityMeasurement
     /// <summary>
     /// Quantity Measurement Class.
     /// </summary>
-    public class QuantityMeasurementMain
+    public static class QuantityMeasurementMain
     {
+        /// <summary>
+        /// method to get feet.
+        /// </summary>
+        /// <param name="feet">feet value to get converted.</param>
+        /// <returns>feet.</returns>
+        public static double GetFeet(double feet)
+        {
+            return feet;
+        }
     }
 }
