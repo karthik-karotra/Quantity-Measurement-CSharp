@@ -1,23 +1,13 @@
 [*.cs]
 
-# SA1614: Element parameter documentation should have text
-dotnet_diagnostic.SA1614.severity = none
-
-# SA1616: Element return value documentation should have text
-dotnet_diagnostic.SA1616.severity = none
-
 # SA0001: XML comment analysis is disabled due to project configuration
 dotnet_diagnostic.SA0001.severity = none
 
 # SA1602: Enumeration items should be documented
 dotnet_diagnostic.SA1602.severity = none
 
-# SA1611: Element parameters should be documented
-dotnet_diagnostic.SA1611.severity = silent
-
 # CA1052: Static holder types should be Static or NotInheritable
 dotnet_diagnostic.CA1052.severity = none
-
 
 # CA1822: Mark members as static
 dotnet_diagnostic.CA1822.severity = none
