@@ -12,7 +12,7 @@ namespace QuantityMeasurementTest
     /// </summary>
     public class QuantityMeasurementTest
     {
-        private QuantityMeasurementMain quantityMeasurement;
+        private QuantityMeasurement quantityMeasurement;
 
         /// <summary>
         /// SetUp Method.
@@ -20,7 +20,7 @@ namespace QuantityMeasurementTest
         [SetUp]
         public void Setup()
         {
-            this.quantityMeasurement = new QuantityMeasurementMain();
+            this.quantityMeasurement = new QuantityMeasurement();
         }
 
         /// <summary>
@@ -59,9 +59,9 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenClassReferenceForFeet_WhenTypeChecked_ShouldReturnTrue()
         {
-            QuantityMeasurementMain quantityMeasurement1 = new QuantityMeasurementMain();
-            QuantityMeasurementMain quantityMeasurement2 = new QuantityMeasurementMain();
-            Assert.AreEqual(quantityMeasurement1, quantityMeasurement2);
+            QuantityMeasurement quantityMeasurementOne = new QuantityMeasurement();
+            QuantityMeasurement quantityMeasurementTwo = new QuantityMeasurement();
+            Assert.AreEqual(quantityMeasurementOne, quantityMeasurementTwo);
         }
 
         /// <summary>
@@ -95,36 +95,6 @@ namespace QuantityMeasurementTest
             double inchOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.INCH);
             double inchTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.INCH);
             Assert.AreEqual(inchOne, inchTwo);
-        }
-
-        /// <summary>
-        /// Test method for checking null reference for inch.
-        /// </summary>
-        [Test]
-        public void GivenNullInchValue_ShouldReturnFalse()
-        {
-            Assert.IsFalse(this.quantityMeasurement.Equals(null));
-        }
-
-        /// <summary>
-        /// Test method for checking class reference for inch.
-        /// </summary>
-        [Test]
-        public void GivenClassReferenceForInch_WhenChecked_ShouldReturnTrue()
-        {
-            bool result = this.quantityMeasurement.Equals(this.quantityMeasurement);
-            Assert.IsTrue(result);
-        }
-
-        /// <summary>
-        /// Test method for checking type.
-        /// </summary>
-        [Test]
-        public void GivenClassReferenceForInch_WhenTypeChecked_ShouldReturnTrue()
-        {
-            QuantityMeasurementMain quantityMeasurement1 = new QuantityMeasurementMain();
-            QuantityMeasurementMain quantityMeasurement2 = new QuantityMeasurementMain();
-            Assert.AreEqual(quantityMeasurement1, quantityMeasurement2);
         }
 
         /// <summary>
@@ -199,6 +169,61 @@ namespace QuantityMeasurementTest
         {
             double valueOne = this.quantityMeasurement.UnitConversion(12.0, ConversionUnits.Unit.INCH);
             double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 yard and 0 yard.
+        /// </summary>
+        [Test]
+        public void GivenZeroYardAndZeroYard_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.YARD);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.YARD);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same yard values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameYardValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different yard values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentYardValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.YARD);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 feet and 0 yard.
+        /// </summary>
+        [Test]
+        public void GivenZeroFeetAndZeroYard_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.FEET);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.YARD);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 inch and 0 yard.
+        /// </summary>
+        [Test]
+        public void GivenZeroInchAndZeroYard_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.YARD);
             Assert.AreEqual(valueOne, valueTwo);
         }
     }

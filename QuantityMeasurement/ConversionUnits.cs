@@ -15,6 +15,7 @@ namespace QuantityMeasurement
         {
             FEET,
             INCH,
+            YARD,
         }
 
         /// <summary>
@@ -28,6 +29,7 @@ namespace QuantityMeasurement
             {
                 Unit.FEET => 1 * 12.0,
                 Unit.INCH => 1.0,
+                Unit.YARD => 1 * 36.0,
                 _ => 0.0,
             };
         }

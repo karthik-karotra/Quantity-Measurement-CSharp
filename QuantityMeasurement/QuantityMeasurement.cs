@@ -1,4 +1,4 @@
-﻿// <copyright file="QuantityMeasurementMain.cs" company="BridgeLabz Solutions">
+﻿// <copyright file="QuantityMeasurement.cs" company="BridgeLabz Solutions">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -7,7 +7,7 @@ namespace QuantityMeasurement
     /// <summary>
     /// Quantity Measurement Class.
     /// </summary>
-    public class QuantityMeasurementMain
+    public class QuantityMeasurement
     {
         /// <summary>
         /// method to get feet.
@@ -38,7 +38,7 @@ namespace QuantityMeasurement
                 return true;
             }
 
-            if (obj is QuantityMeasurementMain)
+            if (obj is QuantityMeasurement)
             {
                 return true;
             }
@@ -50,9 +50,6 @@ namespace QuantityMeasurement
         /// HashCode Of Object.
         /// </summary>
         /// <returns>Returns HashCode.</returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
     }
 }
