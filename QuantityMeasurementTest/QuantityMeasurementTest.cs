@@ -538,5 +538,16 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(3.78, ConversionUnits.Unit.LITRE);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 1 litre and 1000 millilitre.
+        /// </summary>
+        [Test]
+        public void GivenOneLitreAndOneThousandMillilitre_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.LITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1000.0, ConversionUnits.Unit.MILLILITRE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
