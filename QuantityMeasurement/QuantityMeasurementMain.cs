@@ -12,21 +12,13 @@ namespace QuantityMeasurement
         /// <summary>
         /// method to get feet.
         /// </summary>
-        /// <param name="feet">feet value to get converted.</param>
-        /// <returns>feet.</returns>
-        public double GetFeet(double feet)
+        /// <param name="value">value to get converted.</param>
+        /// <param name="unit">unit of value to get converted.</param>
+        /// <returns>converted value.</returns>
+        public double UnitConversion(double value, ConversionUnits.Unit unit)
         {
-            return feet;
-        }
-
-        /// <summary>
-        /// method to get inch.
-        /// </summary>
-        /// <param name="inch">inch value to get converted.</param>
-        /// <returns>inch.</returns>
-        public double GetInch(double inch)
-        {
-            return inch;
+            double conversionFactor = ConversionUnits.GetConvertionFactor(unit);
+            return conversionFactor * value;
         }
 
         /// <summary>
