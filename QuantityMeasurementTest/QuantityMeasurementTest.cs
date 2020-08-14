@@ -226,5 +226,72 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.YARD);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 3 feet and 1 yard.
+        /// </summary>
+        [Test]
+        public void GivenThreeFeetAndOneYard_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(3.0, ConversionUnits.Unit.FEET);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 1 feet and 1 yard.
+        /// </summary>
+        [Test]
+        public void GivenOneFeetAndOneYard_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FEET);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 1 inch and 1 yard.
+        /// </summary>
+        [Test]
+        public void GivenOneInchAndOneYard_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 1 yard and 36 inch.
+        /// </summary>
+        [Test]
+        public void GivenOneYardAndThirtySixInch_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            double valueTwo = this.quantityMeasurement.UnitConversion(36.0, ConversionUnits.Unit.INCH);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 36 inch and 1 yard.
+        /// </summary>
+        [Test]
+        public void GivenThirtySixInchAndOneYard_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(36.0, ConversionUnits.Unit.INCH);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 1 yard and 3 feet.
+        /// </summary>
+        [Test]
+        public void GivenOneYardAndThreeFeet_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.YARD);
+            double valueTwo = this.quantityMeasurement.UnitConversion(3.0, ConversionUnits.Unit.FEET);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
     }
 }
