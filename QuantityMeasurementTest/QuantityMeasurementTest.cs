@@ -549,5 +549,29 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(1000.0, ConversionUnits.Unit.MILLILITRE);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking addition of 1 gallon and 3.78 litre is 7.56 litre.
+        /// </summary>
+        [Test]
+        public void GivenOneGallonAndThreePointSevenEightLitre_WhenAdded_ShouldReturnSevenPointFiveSixLitre()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GALLON);
+            double valueTwo = this.quantityMeasurement.UnitConversion(3.78, ConversionUnits.Unit.LITRE);
+            double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
+            Assert.AreEqual(7.56, Math.Ceiling(total * 100) / 100);
+        }
+
+        /// <summary>
+        /// Test method for checking addition of 1 litre and 1000 millilitre is 2 litre.
+        /// </summary>
+        [Test]
+        public void GivenOneLitreAndOneThousandMillilitre_WhenAdded_ShouldReturnTwoLitre()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.LITRE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1000.0, ConversionUnits.Unit.MILLILITRE);
+            double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
+            Assert.AreEqual(2.0, total);
+        }
     }
 }
