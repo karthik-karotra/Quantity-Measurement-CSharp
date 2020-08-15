@@ -4,8 +4,9 @@
 
 namespace QuantityMeasurementTest
 {
+    using System;
     using NUnit.Framework;
-    using QuantityMeasurement;
+    using QuantityMeasurementProblem;
 
     /// <summary>
     /// Quantity Measurement Class.
@@ -815,6 +816,17 @@ namespace QuantityMeasurementTest
             double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.FAHRENHEIT);
             double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CELSIUS);
             Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 212 fahrenheit and 100 celsius.
+        /// </summary>
+        [Test]
+        public void GivenTwoHundredAndTwelveFahrenheitAndOneHundredCelsius_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(212.0, ConversionUnits.Unit.FAHRENHEIT);
+            double valueTwo = this.quantityMeasurement.UnitConversion(100.0, ConversionUnits.Unit.CELSIUS);
+            Assert.AreEqual(valueOne, valueTwo);
         }
     }
 }

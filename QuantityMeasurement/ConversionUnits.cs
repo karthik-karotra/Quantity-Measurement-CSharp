@@ -1,7 +1,7 @@
 ﻿// <copyright file="ConversionUnits.cs" company="BridgeLabz Solutions">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
-namespace QuantityMeasurement
+namespace QuantityMeasurementProblem
 {
     /// <summary>
     /// Conversion Units Class.
