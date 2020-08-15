@@ -739,5 +739,82 @@ namespace QuantityMeasurementTest
             double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
             Assert.AreEqual(1001.0, total);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 0 celsius and 0 celsius.
+        /// </summary>
+        [Test]
+        public void GivenZeroCelsiusAndZeroCelsius_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CELSIUS);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CELSIUS);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same celsius values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameCelsiusValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.CELSIUS);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.CELSIUS);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different celsius values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentCelsiusValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.CELSIUS);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.CELSIUS);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 fahrenheit and 0 fahrenheit.
+        /// </summary>
+        [Test]
+        public void GivenZeroFahrenheitAndZeroFahrenheit_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.FAHRENHEIT);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.FAHRENHEIT);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same fahrenheit values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameFahrenheitValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FAHRENHEIT);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FAHRENHEIT);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different fahrenheit values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentFahrenheitValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.FAHRENHEIT);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.FAHRENHEIT);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 degree and 0 fahrenheit.
+        /// </summary>
+        [Test]
+        public void GivenZeroFahrenheitAndZeroCelsius_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.FAHRENHEIT);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.CELSIUS);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
     }
 }

@@ -23,6 +23,8 @@ namespace QuantityMeasurement
             KILOGRAM,
             GRAM,
             TONNE,
+            CELSIUS,
+            FAHRENHEIT,
         }
 
         /// <summary>
@@ -44,6 +46,8 @@ namespace QuantityMeasurement
                 Unit.KILOGRAM => 1.0,
                 Unit.GRAM => 1.0 / 1000,
                 Unit.TONNE => 1 * 1000.0,
+                Unit.CELSIUS => 1.8,
+                Unit.FAHRENHEIT => 1.0,
                 _ => 0.0,
             };
         }

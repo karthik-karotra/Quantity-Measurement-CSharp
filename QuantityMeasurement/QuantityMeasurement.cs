@@ -10,7 +10,7 @@ namespace QuantityMeasurement
     public class QuantityMeasurement
     {
         /// <summary>
-        /// method to get feet.
+        /// method to get converted value from one unit to another.
         /// </summary>
         /// <param name="value">value to get converted.</param>
         /// <param name="unit">unit of value to get converted.</param>
@@ -18,7 +18,7 @@ namespace QuantityMeasurement
         public double UnitConversion(double value, ConversionUnits.Unit unit)
         {
             double conversionFactor = ConversionUnits.GetConvertionFactor(unit);
-            return conversionFactor * value;
+            return unit.Equals(ConversionUnits.Unit.CELSIUS) ? (conversionFactor * value) + 32 : conversionFactor * value;
         }
 
         /// <summary>
