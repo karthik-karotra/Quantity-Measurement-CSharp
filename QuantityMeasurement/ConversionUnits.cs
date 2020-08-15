@@ -20,6 +20,9 @@ namespace QuantityMeasurement
             LITRE,
             GALLON,
             MILLILITRE,
+            KILOGRAM,
+            GRAM,
+            TONNE,
         }
 
         /// <summary>
@@ -38,6 +41,9 @@ namespace QuantityMeasurement
                 Unit.LITRE => 1.0,
                 Unit.GALLON => 3.78,
                 Unit.MILLILITRE => 1.0 / 1000,
+                Unit.KILOGRAM => 1.0,
+                Unit.GRAM => 1.0 / 1000,
+                Unit.TONNE => 1 * 1000.0,
                 _ => 0.0,
             };
         }

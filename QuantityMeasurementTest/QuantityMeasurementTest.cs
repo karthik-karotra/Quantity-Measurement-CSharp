@@ -573,5 +573,137 @@ namespace QuantityMeasurementTest
             double total = this.quantityMeasurement.AddUnits(valueOne, valueTwo);
             Assert.AreEqual(2.0, total);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 0 kilogram and 0 kilogram.
+        /// </summary>
+        [Test]
+        public void GivenZeroKilogramAndZeroKilogram_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.KILOGRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.KILOGRAM);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same kilogram values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameKilogramValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.KILOGRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.KILOGRAM);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different kilogram values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentKilogramValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.KILOGRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.KILOGRAM);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 gram and 0 gram.
+        /// </summary>
+        [Test]
+        public void GivenZeroGramAndZeroGram_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GRAM);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same gram values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameGramValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GRAM);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different gram values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentGramValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.GRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.GRAM);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 tonne and 0 tonne.
+        /// </summary>
+        [Test]
+        public void GivenZeroTonneAndZeroTonne_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.TONNE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.TONNE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 same tonne values.
+        /// </summary>
+        [Test]
+        public void GivenTwoSameTonneValues_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.TONNE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.TONNE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 2 different tonne values.
+        /// </summary>
+        [Test]
+        public void GivenTwoDifferentTonneValues_WhenCompared_ShouldReturnFalse()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.TONNE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(10.0, ConversionUnits.Unit.TONNE);
+            Assert.AreNotEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 kilogram and 0 gram.
+        /// </summary>
+        [Test]
+        public void GivenZeroKilogramAndZeroGram_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.KILOGRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GRAM);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 kilogram and 0 tonne.
+        /// </summary>
+        [Test]
+        public void GivenZeroKilogramAndZeroTonne_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.KILOGRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.TONNE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
+
+        /// <summary>
+        /// Test method for checking equality between 0 gram and 0 tonne.
+        /// </summary>
+        [Test]
+        public void GivenZeroGramAndZeroTonne_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.GRAM);
+            double valueTwo = this.quantityMeasurement.UnitConversion(0.0, ConversionUnits.Unit.TONNE);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
