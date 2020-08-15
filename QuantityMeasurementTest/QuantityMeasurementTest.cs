@@ -716,5 +716,16 @@ namespace QuantityMeasurementTest
             double valueTwo = this.quantityMeasurement.UnitConversion(1000.0, ConversionUnits.Unit.GRAM);
             Assert.AreEqual(valueOne, valueTwo);
         }
+
+        /// <summary>
+        /// Test method for checking equality between 1 tonne and 1000 kilogram.
+        /// </summary>
+        [Test]
+        public void GivenOneTonneAndOneThousandKilogram_WhenCompared_ShouldReturnTrue()
+        {
+            double valueOne = this.quantityMeasurement.UnitConversion(1.0, ConversionUnits.Unit.TONNE);
+            double valueTwo = this.quantityMeasurement.UnitConversion(1000.0, ConversionUnits.Unit.KILOGRAM);
+            Assert.AreEqual(valueOne, valueTwo);
+        }
     }
 }
